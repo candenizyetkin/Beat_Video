@@ -11,13 +11,13 @@ function Home() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [genre, setGenre] = useState('Independent');
-  const [minRating, setMinRating] = useState(9);
+  const [genre, setGenre] = useState('Action');
+  const [minRating, setMinRating] = useState(7);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedMovieId, setSelectedMovieId] = useState(null);
 
   // Yeni: Arama tetikleyici
-  const [searchParams, setSearchParams] = useState({ genre: 'Independent', minRating: 9 });
+  const [searchParams, setSearchParams] = useState({ genre: 'Action', minRating: 7 });
 
   // Sadece 'Bul' butonuna basınca fetch
   // Basit cache objesi (arama parametrelerine göre anahtar)
@@ -77,11 +77,9 @@ const handleSearch = async () => {
   return (
     <div className="home-header">
     
-      {/* Logo ve tema butonu */}
       <div className="home-header-logo-area">
         <span className="main-logo-text">Beat Video</span>
       </div>
-      {/* Filtreler */}
       <div className="home-search-area">
         <div className="home-search-column">
           <label className="home-search-label">Tür</label>

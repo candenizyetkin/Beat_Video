@@ -5,8 +5,11 @@
   gap: 16px;
   margin-bottom: 24px;
 }
+
+
 .main-logo-text {
-  margin: 0;
-  font-weight: 700;
+  color: #2568ef;
+  font-weight: 800;
   font-size: 32px;
+  letter-spacing: 1px;
 }

@@ -2,10 +2,10 @@
 .imdb-input {
   padding: 10px 14px;
   border-radius: 8px;
-  border: 1.5px solid var(--primary, #2568ef);
+  border: 1.5px solid #3e6c88;
   font-size: 16px;
-  background: var(--card-bg, #232c36);
-  color: var(--text-main, #222);
+  background: #2568ef;
+  color: #fff;
   outline: none;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   transition: border 0.2s;
@@ -41,14 +41,10 @@
 .imdb-arrow-btn:hover {
   color: #38c9ff;
 }
-body[data-theme="light"] .imdb-input {
-  background: #fff;
-  color: #222;
-  border: 1.5px solid #2568ef;
-}
+
 body[data-theme="light"] select {
   background: #fff !important;
-  color: #222 !important;
+  color: #fff9f9 !important;
   border: 1.5px solid #2568ef !important;
 }
 body[data-theme="light"] .imdb-arrow-btn {
