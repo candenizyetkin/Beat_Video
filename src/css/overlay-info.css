@@ -1,0 +1,13 @@
+/* Overlay film bilgileri */
+.overlay-info {
+  font-size: 15px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+.overlay-info.summary {
+  color: #ccc;
+  margin-bottom: 12px;
+}
+.overlay-info.rating {
+  color: #ffd700;
+}

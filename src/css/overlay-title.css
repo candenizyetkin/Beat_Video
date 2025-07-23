@@ -1,0 +1,11 @@
+/* Overlay başlık ve yıl */
+.overlay-title {
+  color: #2568ef;
+  margin-bottom: 12px;
+  font-size: 22px;
+  text-align: center;
+}
+.overlay-title-year {
+  font-size: 18px;
+  color: #aaa;
+}

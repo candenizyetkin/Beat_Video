@@ -1,0 +1,17 @@
+/* filter.css: Arama ve filtre alanı */
+.search-area, .filter-area {
+  border: 1.5px solid var(--border, #dbeafe);
+  background: var(--card-bg, #f9fafb);
+  color: var(--text-main, #222);
+  padding: 14px 10px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+@media (max-width: 600px) {
+  .search-area {
+    padding: 10px 4px !important;
+  }
+  .filter-area {
+    padding: 14px 16px;
+  }
+}

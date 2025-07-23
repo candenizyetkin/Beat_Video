@@ -1,0 +1,17 @@
+.home-movie-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.home-movie-card {
+  margin: 12px 0;
+  background: var(--card-bg, #2a2a2a);
+  padding: 14px 8px;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: var(--card-shadow, 0 4px 12px rgba(0,0,0,0.2));
+  transition: transform 0.2s ease;
+}

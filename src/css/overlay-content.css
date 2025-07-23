@@ -1,0 +1,17 @@
+/* FilmOverlay modal içeriği */
+.overlay-content {
+  background: #222;
+  border-radius: 16px;
+  padding: 24px 16px;
+  min-width: 260px;
+  max-width: 500px;
+  width: 95%;
+  max-height: 90vh;
+  margin: 32px 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  color: #fff;
+  position: relative;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}

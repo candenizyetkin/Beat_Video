@@ -1,0 +1,6 @@
+.home-empty {
+  margin: 20px 0;
+  text-align: center;
+  color: var(--text-main, #fff);
+  font-size: 1.08rem;
+}

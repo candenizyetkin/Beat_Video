@@ -1,0 +1,12 @@
+.home-header-logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.main-logo-text {
+  margin: 0;
+  font-weight: 700;
+  font-size: 32px;
+}

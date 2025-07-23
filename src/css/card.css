@@ -1,0 +1,17 @@
+/* card.css: Film kartı ve kart gövdesi */
+.movie-card {
+  border: 1.5px solid var(--border, #dbeafe);
+  color: var(--text-main, #222);
+  background: var(--card-bg, #f9fafb);
+  box-shadow: var(--card-shadow, 0 4px 16px rgba(0,0,0,0.06));
+  padding: 16px 12px;
+  margin: 12px 0;
+  border-radius: 14px;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+@media (max-width: 600px) {
+  .movie-card {
+    padding: 12px 6px !important;
+    margin: 8px 0 !important;
+  }
+}

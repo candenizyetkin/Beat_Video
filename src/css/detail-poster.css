@@ -1,0 +1,14 @@
+/* Poster kutusu ve resim */
+.detail-poster {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.detail-poster-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

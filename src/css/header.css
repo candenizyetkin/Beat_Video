@@ -1,0 +1,38 @@
+/* header.css: Üst kısım ve logo alanı */
+.App-header {
+  background-color: var(--bg-main, #282c34);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--text-main, white);
+  padding: 8px;
+  position: relative;
+}
+.header-logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.main-logo-text {
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+@media (max-width: 600px) {
+  .App-header {
+    padding: 2px;
+  }
+  .header-logo-area {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .main-logo-text {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+  }
+}

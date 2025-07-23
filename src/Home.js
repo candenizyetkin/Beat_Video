@@ -1,9 +1,7 @@
-
-
 import React, { useEffect, useState } from 'react';
 import api from './api';
 import FilmOverlay from './FilmOverlay';
-import './App.css';
+import './css/home.css';
 
 const GENRES = [
   'Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Family', 'Fantasy', 'Film-Noir', 'History', 'Horror', 'Independent', 'Music', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Short', 'Sport', 'Superhero', 'Thriller', 'War', 'Western'
@@ -77,77 +75,27 @@ const handleSearch = async () => {
   };
 
   return (
-    <div className="App-header">
-      {/* Desktop için kenarlara mockup reklam slotları */}
-      <div className="mockup-ads-left" style={{ display: 'none' }}></div>
-      <div className="mockup-ads-right" style={{ display: 'none' }}></div>
+    <div className="home-header">
+    
       {/* Logo ve tema butonu */}
-      <div className="header-logo-area" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, marginBottom: 24 }}>
-        <span className="main-logo-text" style={{ margin: 0, fontWeight: 700, fontSize: 32 }}>Beat Video</span>
-        <button
-          onClick={() => {
-            const theme = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            document.body.setAttribute('data-theme', theme);
-          }}
-          style={{
-            background: 'var(--card-bg, #222)',
-            color: 'var(--text-main, #fff)',
-            border: '1.5px solid #38c9ff',
-            borderRadius: 8,
-            padding: '6px 16px',
-            fontWeight: 600,
-            fontSize: 16,
-            cursor: 'pointer',
-            marginLeft: 8
-          }}
-          aria-label="Tema değiştir"
-        >
-          🌙 / ☀️
-        </button>
+      <div className="home-header-logo-area">
+        <span className="main-logo-text">Beat Video</span>
       </div>
       {/* Filtreler */}
-      <div className="search-area" style={{
-        background: 'var(--card-bg, rgba(30,34,45,0.96))',
-        boxShadow: 'var(--card-shadow, 0 4px 24px rgba(0,0,0,0.22))',
-        borderRadius: 18,
-        padding: '20px 10px 14px 10px',
-        marginBottom: 24,
-        maxWidth: 700,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: 18,
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        '@media (max-width: 768px)': {
-          padding: '16px 8px'
-        }
-      }}>
-        <div style={{ display: 'flex', flexDirection: 'column', minWidth: 180 }}>
-          <label style={{ color: '#b6eaff', fontWeight: 600, marginBottom: 6, letterSpacing: 1 }}>Tür</label>
+      <div className="home-search-area">
+        <div className="home-search-column">
+          <label className="home-search-label">Tür</label>
           <select
             value={searchParams.genre}
             onChange={e => setSearchParams(sp => ({ ...sp, genre: e.target.value }))}
-            style={{
-              padding: '10px 14px',
-              borderRadius: 8,
-              border: '1.5px solid #3e6c88',
-              fontSize: 16,
-              background: '#232c36',
-              color: '#fff',
-              outline: 'none',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-              transition: 'border 0.2s',
-            }}
+            className="home-genre-select"
           >
             {GENRES.map(g => <option key={g} value={g}>{g}</option>)}
           </select>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', minWidth: 140 }}>
-          <label style={{ color: '#b6eaff', fontWeight: 600, marginBottom: 6, letterSpacing: 1 }}>Minimum IMDb</label>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 4, width: 100 }}>
+        <div className="home-search-column">
+          <label className="home-search-label">Minimum IMDb</label>
+          <div className="imdb-input-container">
             <input
               type="number"
               min={0}
@@ -217,44 +165,30 @@ const handleSearch = async () => {
       </div>
       {loading && <div style={{ margin: '20px 0' }}>Filmler yükleniyor...</div>}
       {error && (
-        <div style={{ background: error.includes('istek yapıldı') ? '#ffae44' : '#ff4444', color: 'white', padding: '12px 24px', borderRadius: 8, margin: '20px 0', fontWeight: 600 }}>
+        <div className={error.includes('istek yapıldı') ? "home-warning" : "home-error"}>
           {error}
         </div>
       )}
       {!loading && !error && movies.length === 0 && (
-        <div style={{ margin: '20px 0' }}>Hiç film bulunamadı.</div>
+        <div className="home-empty">Hiç film bulunamadı.</div>
       )}
-      <ul style={{ listStyle: 'none', padding: 0, width: '100%', maxWidth: 600, margin: '0 auto' }}>
+      <ul className="home-movie-list">
         {movies.map((movie, idx) => {
           const id = movie.id || idx;
           return (
-            <li key={id} className="movie-card" style={{
-              margin: '12px 0',
-              background: 'var(--card-bg, #2a2a2a)',
-              padding: '14px 8px',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'flex-start',
-              boxShadow: 'var(--card-shadow, 0 4px 12px rgba(0,0,0,0.2))',
-              transition: 'transform 0.2s ease',
-              cursor: 'pointer',
-              gap: 14,
-              '@media (max-width: 768px)': {
-                padding: '12px 6px'
-              }
-            }}>
+            <li key={id} className="home-movie-card">
               {movie.medium_cover_image && (
-                <img src={movie.medium_cover_image} alt={movie.title} style={{ width: 80, height: 120, objectFit: 'cover', borderRadius: 8, marginRight: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }} />
-              )}
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span style={{ fontWeight: 'bold', fontSize: 20, color: '#61dafb' }}>{idx + 1}.</span>
-                  <span onClick={() => handleOverlayOpen(movie)} style={{ fontWeight: 'bold', fontSize: 18, color: '#61dafb', textDecoration: 'underline', cursor: 'pointer' }}>{movie.title}</span>
-                  {movie.year && <span style={{ fontSize: 14, color: '#aaa', marginLeft: 8 }}>({movie.year})</span>}
+                <img src={movie.medium_cover_image} alt={movie.title} className="home-movie-img" />
+              )} 
+              <div className="home-movie-info">
+                <div className="home-movie-title-row">
+                  <span className="home-movie-index">{idx + 1}.</span>
+                  <span className="home-movie-title" onClick={() => handleOverlayOpen(movie)}>{movie.title}</span>
+                  {movie.year && <span className="home-movie-year">({movie.year})</span>}
                 </div>
-                {movie.rating && <div style={{ fontSize: 15, color: '#ffd700', margin: '4px 0' }}>IMDb: {movie.rating}</div>}
-                {movie.genres && <div style={{ fontSize: 14, color: '#aaa', margin: '2px 0' }}>Tür: {movie.genres.join(', ')}</div>}
-                {movie.runtime && <div style={{ fontSize: 14, color: '#aaa', margin: '2px 0' }}>Süre: {movie.runtime} dk</div>}
+                {movie.rating && <div className="home-movie-rating">IMDb: {movie.rating}</div>}
+                {movie.genres && <div className="home-movie-genres">Tür: {movie.genres.join(', ')}</div>}
+                {movie.runtime && <div className="home-movie-runtime">Süre: {movie.runtime} dk</div>}
               </div>
             </li>
           );

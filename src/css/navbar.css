@@ -1,0 +1,107 @@
+/* navbar.css: Modern, responsive, mobile-friendly navbar with divider */
+.main-navbar {
+  width: 100%;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  overflow-x: hidden;
+  border-bottom: none; /* transparent divider */
+  box-shadow: none;
+}
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 18px 8px 12px 8px;
+}
+.navbar-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.navbar-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 64px;
+  color: #2568ef;
+  margin-left: 0;
+}
+.navbar-logo-img {
+  height: 100px;
+  max-width: 180px;
+  width: auto;
+  display: block;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+}
+@media (max-width: 600px) {
+  .navbar-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    padding: 10px 12px 8px 12px;
+  }
+  .navbar-logo-link {
+    height: 80px;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .navbar-logo-img {
+    height: 80px;
+    min-width: 80px;
+    max-width: 120px;
+    margin: 0 auto;
+    display: block;
+  }
+  .navbar-actions {
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #2568ef;
+  padding: 4px 10px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.theme-toggle-btn:hover {
+  background: #fff;
+  color: #2568ef;
+}
+
+@media (max-width: 600px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 8px 8px 8px;
+  }
+  .navbar-logo {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .navbar-actions {
+    justify-content: flex-end;
+  }
+  .navbar-divider {
+    margin-top: 4px;
+    height: 2px;
+  }
+}

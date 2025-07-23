@@ -1,0 +1,15 @@
+/* Overlay kapatma butonu */
+.overlay-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #2568ef;
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.overlay-close:hover {
+  color: #1743a2;
+}

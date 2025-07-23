@@ -1,0 +1,50 @@
+.home-movie-img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  background: #181c23;
+}
+.home-movie-info {
+  flex: 1;
+  min-width: 0;
+}
+.home-movie-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.home-movie-index {
+  font-weight: bold;
+  font-size: 20px;
+  color: #61dafb;
+}
+.home-movie-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #61dafb;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+.home-movie-title:hover {
+  color: #38c9ff;
+}
+.home-movie-year {
+  font-size: 14px;
+  color: #aaa;
+  margin-left: 8px;
+}
+.home-movie-rating {
+  font-size: 15px;
+  color: #ffd700;
+  margin: 4px 0;
+}
+.home-movie-genres, .home-movie-runtime {
+  font-size: 14px;
+  color: #aaa;
+  margin: 2px 0;
+}

@@ -1,0 +1,33 @@
+.home-search-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  margin: 0 8px 12px 8px;
+}
+.home-search-label {
+  color: #b6eaff;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+.home-genre-select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #3e6c88;
+  font-size: 16px;
+  background: #232c36;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: border 0.2s;
+}
+.home-genre-select:focus {
+  border: 1.5px solid #38c9ff;
+}
+.imdb-input-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100px;
+}

@@ -1,0 +1,214 @@
+/* Genel Home Alanı */
+.home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.home-header-logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.main-logo-text {
+  margin: 0;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+/* Arama ve Filtre Alanı */
+.home-search-area {
+  background: var(--card-bg, #232c36);
+  box-shadow: var(--card-shadow, 0 4px 24px rgba(0,0,0,0.22));
+  border-radius: 18px;
+  padding: 20px 10px 14px 10px;
+  margin-bottom: 24px;
+  margin-top: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.home-search-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  margin: 0 8px 12px 8px;
+}
+.home-search-label {
+  color: #2568ef;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+.home-genre-select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #2568ef;
+  font-size: 16px;
+  background: #2568ef;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: border 0.2s;
+}
+.home-genre-select:focus {
+  border: 1.5px solid #38c9ff;
+}
+.imdb-input-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100px;
+}
+
+/* Liste ve Kartlar */
+.home-movie-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.home-movie-card {
+  margin: 12px 0;
+  background: var(--card-bg, #2a2a2a);
+  padding: 14px 8px;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: var(--card-shadow, 0 4px 12px rgba(0,0,0,0.2));
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  gap: 14px;
+}
+.home-movie-card:hover {
+  transform: translateY(-3px) scale(1.025);
+  box-shadow: 0 8px 20px rgba(56,201,255,0.13);
+}
+.home-movie-img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  background: #fff;
+}
+.home-movie-info {
+  flex: 1;
+  min-width: 0;
+}
+.home-movie-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.home-movie-index {
+  font-weight: bold;
+  font-size: 20px;
+  color: #2568ef;
+}
+.home-movie-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2568ef;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+.home-movie-title:hover {
+  color: #38c9ff;
+}
+.home-movie-year {
+  font-size: 14px;
+  color: #2568ef;
+  margin-left: 8px;
+}
+.home-movie-rating {
+  font-size: 15px;
+  color: #ffd700;
+  margin: 4px 0;
+}
+.home-movie-genres, .home-movie-runtime {
+  font-size: 14px;
+  color: #2568ef;
+  margin: 2px 0;
+}
+
+/* Hata, Uyarı, Boş */
+.home-error {
+  background: #2568ef;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-weight: 600;
+  text-align: center;
+}
+.home-warning {
+  background: #ffae44;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-weight: 600;
+  text-align: center;
+}
+.home-empty {
+  margin: 20px 0;
+  text-align: center;
+  color: var(--text-main, #fff);
+  font-size: 1.08rem;
+}
+
+@media (max-width: 700px) {
+  .home-search-area {
+    padding: 18px 6vw;
+    max-width: 97vw;
+    margin-bottom: 18px;
+  }
+  .home-movie-list {
+    max-width: 97vw;
+  }
+
+  .home-search-area {
+    padding: 14px 6px;
+    max-width: 97vw;
+  }
+  .home-movie-list {
+    max-width: 97vw;
+  }
+}
+@media (max-width: 600px) {
+  .main-logo-text {
+    font-size: 22px;
+  }
+  .home-header-logo-area {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .home-search-area {
+    padding: 14px 3vw;
+  }
+  .home-movie-img {
+    width: 54px;
+    height: 80px;
+    margin-right: 8px;
+  }
+  .home-movie-title {
+    font-size: 15px;
+  }
+  .home-movie-index {
+    font-size: 15px;
+  }
+}

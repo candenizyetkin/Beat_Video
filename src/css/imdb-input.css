@@ -1,11 +1,11 @@
-/* Modern number input arrows for IMDb filter */
+/* imdb-input.css: IMDb input ve ok tuşları */
 .imdb-input {
   padding: 10px 14px;
   border-radius: 8px;
-  border: 1.5px solid #3e6c88;
+  border: 1.5px solid var(--primary, #2568ef);
   font-size: 16px;
-  background: #232c36;
-  color: #fff;
+  background: var(--card-bg, #232c36);
+  color: var(--text-main, #222);
   outline: none;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   transition: border 0.2s;
@@ -15,12 +15,10 @@
   -moz-appearance: textfield;
   position: relative;
 }
-
 .imdb-input::-webkit-inner-spin-button, .imdb-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 .imdb-input-arrows {
   display: flex;
   flex-direction: column;
@@ -30,11 +28,10 @@
   height: 44px;
   justify-content: space-between;
 }
-
 .imdb-arrow-btn {
   background: none;
   border: none;
-  color: #61dafb;
+  color: var(--primary, #2568ef);
   font-size: 18px;
   cursor: pointer;
   padding: 0 2px;
@@ -43,4 +40,17 @@
 }
 .imdb-arrow-btn:hover {
   color: #38c9ff;
+}
+body[data-theme="light"] .imdb-input {
+  background: #fff;
+  color: #222;
+  border: 1.5px solid #2568ef;
+}
+body[data-theme="light"] select {
+  background: #fff !important;
+  color: #222 !important;
+  border: 1.5px solid #2568ef !important;
+}
+body[data-theme="light"] .imdb-arrow-btn {
+  color: #2568ef;
 }

@@ -2,7 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import api from './api';
-import './App.css';
+import './css/detail-card.css';
+import './css/detail-poster.css';
+import './css/detail-info.css';
+import './css/detail-controls.css';
+import './css/detail-actions.css';
+import './css/detail-status.css';
+
 
 function Detail() {
   const { id } = useParams();
@@ -38,112 +44,39 @@ function Detail() {
   return (
     <div className="App-header">
       {loading && (
-        <div style={{ textAlign: 'center', padding: '40px 0' }}>
-          Yükleniyor...
-        </div>
+        <div className="detail-loading">Yükleniyor...</div>
       )}
 
       {error && (
-        <div style={{
-          background: '#ff4444',
-          color: 'white',
-          padding: '16px 24px',
-          borderRadius: 8,
-          maxWidth: 400,
-          margin: '20px auto',
-          textAlign: 'center'
-        }}>
-          {error}
-        </div>
+        <div className="detail-error">{error}</div>
       )}
 
       {!loading && !error && !movie && (
-        <div style={{
-          textAlign: 'center',
-          padding: '40px 0'
-        }}>
-          Film bulunamadı.
-        </div>
+        <div className="detail-notfound">Film bulunamadı.</div>
       )}
 
       {!loading && !error && movie && (
-        <div style={{
-          background: '#2a2a2a',
-          borderRadius: 16,
-          padding: '32px',
-          minWidth: 320,
-          maxWidth: 500,
-          width: '90%',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          margin: '20px auto'
-        }}>
-          <h1 style={{ 
-            marginBottom: 24,
-            color: '#fff',
-            textAlign: 'center',
-            fontSize: 28
-          }}>
-            {movie.title}
-          </h1>
+        <div className="detail-card">
+          <h1 className="detail-title">{movie.title}</h1>
 
           {movie.poster && (
-            <div style={{
-              width: '100%',
-              maxWidth: 300,
-              marginBottom: 24,
-              borderRadius: 12,
-              overflow: 'hidden',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
-            }}>
+            <div className="detail-poster">
               <img 
                 src={movie.poster} 
                 alt={movie.title} 
-                style={{ 
-                  width: '100%',
-                  height: 'auto',
-                  display: 'block'
-                }} 
+                className="detail-poster-img"
               />
             </div>
           )}
 
-          <div style={{
-            background: '#222',
-            padding: '12px 20px',
-            borderRadius: 8,
-            marginBottom: 24,
-            width: '100%',
-            maxWidth: 300
-          }}>
-            <p style={{ 
-              color: '#aaa',
-              margin: 0,
-              fontSize: 16
-            }}>
-              Yıl: {movie.year || '-'}
-            </p>
+          <div className="detail-info">
+            <p className="detail-year">Yıl: {movie.year || '-'}</p>
           </div>
 
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: 12,
-            marginBottom: 32
-          }}>
+          <div className="detail-controls">
             <button 
               onClick={() => handleCountChange(count - 1)}
-              style={{
-                fontSize: 20,
-                padding: '8px 16px',
-                background: '#444',
-                border: 'none',
-                borderRadius: 6,
-                cursor: 'pointer',
-                color: '#fff'
-              }}
+              className="detail-btn"
             >
               ⬅️
             </button>
@@ -153,70 +86,28 @@ function Detail() {
               value={count}
               min={1}
               onChange={e => handleCountChange(e.target.value)}
-              style={{
-                width: 60,
-                textAlign: 'center',
-                fontSize: 18,
-                padding: '8px',
-                borderRadius: 6,
-                border: '1px solid #666',
-                background: '#333',
-                color: '#fff'
-              }}
+              className="detail-input"
             />
 
             <button 
               onClick={() => handleCountChange(count + 1)}
-              style={{
-                fontSize: 20,
-                padding: '8px 16px',
-                background: '#444',
-                border: 'none',
-                borderRadius: 6,
-                cursor: 'pointer',
-                color: '#fff'
-              }}
+              className="detail-btn"
             >
               ➡️
             </button>
           </div>
 
-          <div style={{
-            display: 'flex',
-            gap: 16
-          }}>
+          <div className="detail-actions" style={{display:'flex',gap:16}}>
             <button
               onClick={() => navigate(-1)}
-              style={{
-                color: '#61dafb',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-                padding: '12px 24px',
-                background: 'rgba(97, 218, 251, 0.1)',
-                border: 'none',
-                borderRadius: 8,
-                cursor: 'pointer',
-                transition: 'background 0.2s ease'
-              }}
-              onMouseOver={e => e.target.style.background = 'rgba(97, 218, 251, 0.2)'}
-              onMouseOut={e => e.target.style.background = 'rgba(97, 218, 251, 0.1)'}
+              className="detail-btn detail-action-btn"
             >
               ← Geri Dön
             </button>
 
             <Link
               to="/"
-              style={{
-                color: '#61dafb',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-                padding: '12px 24px',
-                background: 'rgba(97, 218, 251, 0.1)',
-                borderRadius: 8,
-                transition: 'background 0.2s ease'
-              }}
-              onMouseOver={e => e.target.style.background = 'rgba(97, 218, 251, 0.2)'}
-              onMouseOut={e => e.target.style.background = 'rgba(97, 218, 251, 0.1)'}
+              className="detail-btn detail-action-btn"
             >
               Ana Sayfa
             </Link>
